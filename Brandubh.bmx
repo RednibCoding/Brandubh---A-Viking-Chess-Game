@@ -1,10 +1,15 @@
 SuperStrict
 
+
 Framework BRL.GLMax2D
 Import BRL.FreeAudioAudio
+Import BRL.StandardIO
 Import BRL.RamStream
 Import BRL.PNGLoader
 Import BRL.WAVLoader
+
+SetGraphicsDriver(GLMax2DDriver())
+SetAudioDriver("FreeAudio")
 
 AppTitle = "Brandubh  by Michael Binder"
 Include "settings.bmx"
