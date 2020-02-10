@@ -30,7 +30,7 @@ The two players have different aims in the game:
 The two players have different forces to work with:
 
 - White has a king and 4 warriors.
-- Black has no king, but 8 warriors
+- Black has no king, but 8 warriors.
 
 Starting Position:
 
