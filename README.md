@@ -41,7 +41,7 @@ Starting Position:
 
 All the pieces including the king move the same way in straight lines forward, backwards, left or
 right, any number of squares. It's like the way rooks (or castles) move in chess. No piece may
-move diagonally or jump over another piece, and no more than one piece may occupy a square
+move diagonally or jump over another piece, and no more than one piece may occupy a square.
 
 ## Capturing Pieces
 
@@ -88,4 +88,4 @@ corner square.
 In this example, white has captured the black piece in his
 move because the black piece is trapped between a
 corner square and the white piece. This rule applies to
-either colour.
+either color.
