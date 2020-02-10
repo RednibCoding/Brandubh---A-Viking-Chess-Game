@@ -75,7 +75,7 @@ without stopping on it. The king may return to the throne square after he has le
 The king can be captured while on the throne, just the same as on any other square, by being
 surrounded on two opposite sides.
 In addition, the four corner squares <img src="/assets/pics/raw/corner_square.png" /> (but not the throne square) are hostile squares.
-This means that they can play the part of an enemy warrior of either colour for the purposes of
+This means that they can play the part of an enemy warrior of either color for the purposes of
 capturing.
 
 Any piece, including the king, that is occupying a square
