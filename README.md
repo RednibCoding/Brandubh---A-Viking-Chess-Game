@@ -1,5 +1,5 @@
 # Brandubh---A-Viking-Chess-Game
-This is a one day project trying to implement the board game Brandubh
+This is a one day project with the goal to implement the board game Brandubh
 
 
 <p float="left">
