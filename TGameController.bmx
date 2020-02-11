@@ -32,7 +32,7 @@ Type TGameController
 				For Local y:Int = clickedY+1 To BOARD_SIZE -1
 					If board[clickedX, y] = 0
 						' Don't consider corner tiles or center square as movable
-						If _isCornerSquare(clickedX, y) Or (clickedX = 3 And y = 3)
+						If _isCornerSquare(clickedX, y) Or _isCentralSquare(clickedX, y)
 							' KING can move there though
 							If piece = KING moves.AddLast(TSquare.Create(clickedX, y))
 						Else
@@ -47,7 +47,7 @@ Type TGameController
 				For Local y:Int = clickedY-1 To 0 Step -1
 					If board[clickedX, y] = 0
 						' Don't consider corner tiles or center square as movable
-						If _isCornerSquare(clickedX, y) Or (clickedX = 3 And y = 3)
+						If _isCornerSquare(clickedX, y) Or _isCentralSquare(clickedX, y)
 							' KING can move there though
 							If piece = KING moves.AddLast(TSquare.Create(clickedX, y))
 						Else
@@ -64,12 +64,14 @@ Type TGameController
 				For Local x:Int = clickedX+1 To BOARD_SIZE -1
 					If board[x, clickedY] = 0
 						' Don't consider corner tiles or center square as movable
-						If _isCornerSquare(x, clickedY) Or (x = 3 And clickedY = 3)	
+						If _isCornerSquare(x, clickedY) Or _isCentralSquare(x, clickedY)
 							' KING can move there though
 							If piece = KING moves.AddLast(TSquare.Create(x, clickedY))
 						Else
 							moves.AddLast(TSquare.Create(x, clickedY))
 						EndIf
+
+
 					Else
 						Exit
 					EndIf
@@ -79,7 +81,7 @@ Type TGameController
 				For Local x:Int = clickedX-1 To 0 Step -1
 					If board[x, clickedY] = 0
 						' Don't consider corner tiles or center square as movable
-						If _isCornerSquare(x, clickedY) Or (x = 3 And clickedY = 3)
+						If _isCornerSquare(x, clickedY) Or _isCentralSquare(x, clickedY)
 							' KING can move there though
 							If piece = KING moves.AddLast(TSquare.Create(x, clickedY))
 						Else
@@ -129,7 +131,7 @@ Type TGameController
 							square.y = destSquare.y
 							capturedPieces.AddLast(square)
 						EndIf
-					EndIf
+					EndIf		
 				EndIf
 			EndIf
 			If destSquare.x +1 <= BOARD_SIZE-1
@@ -255,6 +257,12 @@ Type TGameController
 		If x = BOARD_SIZE-1 And y = BOARD_SIZE-1 Return True
 		Return False
 	EndFunction
+	
+	Function _isCentralSquare:Int(x:Int, y:Int)
+		If x = 3 And y = 3 Return True
+		Return False
+	End Function
+
 	
 	' Returns either 0 for no win yet, BLACK or WHITE
 	Function checkWin:Int(squares:Int[,])
